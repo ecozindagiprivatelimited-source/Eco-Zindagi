@@ -10,7 +10,7 @@ export default function ImpactPage() {
     <>
       <Navbar />
       <main className="mesh-bg min-h-screen">
-        <section className="border-b border-white/40 px-4 py-12 sm:px-6 lg:px-8">
+        <section className="border-b border-white/40 px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Impact in Pakistan</p>
             <h1 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">Our Growing Impact</h1>
@@ -20,7 +20,7 @@ export default function ImpactPage() {
           </div>
         </section>
 
-        <section className="px-4 py-10 sm:px-6 lg:px-8">
+        <section className="px-4 py-6 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 lg:grid-cols-4">
             {impactStats.map((stat) => (
               <GlassCard key={stat.metric} hover glow className="p-5 text-center">
@@ -32,9 +32,9 @@ export default function ImpactPage() {
           </div>
         </section>
 
-        <SocietiesSection />
+        <SocietiesSection tight />
 
-        <section className="px-4 pb-14 sm:px-6 lg:px-8">
+        <section className="px-4 pb-10 pt-2 sm:px-6 lg:px-8">
           <GlassCard glow className="mx-auto max-w-2xl p-8 text-center">
             <h2 className="font-heading text-xl font-bold text-foreground">Scale Impact Across Your City</h2>
             <p className="mt-2 text-sm text-muted-foreground">

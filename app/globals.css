@@ -50,6 +50,7 @@
 
 :root {
   color-scheme: light;
+  --header-height: 3.875rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.32 0.09 145);
   --card: oklch(0.98 0.015 145);
@@ -165,6 +166,9 @@
   }
   body {
     @apply bg-background text-foreground font-sans overflow-x-hidden;
+  }
+  main {
+    padding-top: var(--header-height);
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);

@@ -14,9 +14,15 @@ const benefits = [
   { title: 'Full Team Support', desc: 'Eco Zindagi handles installation, training, maintenance, and ongoing circular operations.', icon: '🛠️' },
 ]
 
-export function SocietiesSection({ compact = false }: { compact?: boolean }) {
+export function SocietiesSection({
+  compact = false,
+  tight = false,
+}: {
+  compact?: boolean
+  tight?: boolean
+}) {
   return (
-    <HomeSection tone="muted" className="relative overflow-hidden">
+    <HomeSection tone="muted" tight={tight} className="relative overflow-hidden">
       <div className="pointer-events-none absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 top-0 h-64 w-64 rounded-full bg-accent/15 blur-3xl" />
 

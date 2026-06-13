@@ -5,6 +5,7 @@ type HomeSectionProps = {
   className?: string
   tone?: 'default' | 'muted' | 'soft'
   id?: string
+  tight?: boolean
 }
 
 const sectionTones = {
@@ -18,9 +19,13 @@ export function HomeSection({
   className,
   tone = 'default',
   id,
+  tight = false,
 }: HomeSectionProps) {
   return (
-    <section id={id} className={cn('py-10 md:py-12', sectionTones[tone], className)}>
+    <section
+      id={id}
+      className={cn(tight ? 'py-6 md:py-8' : 'py-10 md:py-12', sectionTones[tone], className)}
+    >
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         {children}
       </div>

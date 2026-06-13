@@ -40,10 +40,10 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          'sticky top-0 z-50 transition-all duration-300',
+          'fixed top-0 left-0 right-0 z-[100] transition-all duration-300',
           scrolled
-            ? 'border-b border-primary/15 bg-white/80 shadow-lg shadow-primary/5 backdrop-blur-2xl'
-            : 'border-b border-white/50 bg-gradient-to-r from-white/75 via-white/60 to-white/75 backdrop-blur-xl'
+            ? 'border-b border-primary/15 bg-white/90 shadow-lg shadow-primary/5 backdrop-blur-2xl'
+            : 'border-b border-white/50 bg-white/85 backdrop-blur-xl'
         )}
       >
         {/* Accent line */}
@@ -143,7 +143,7 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ type: 'spring', stiffness: 400, damping: 32 }}
-              className="fixed left-4 right-4 top-[4.5rem] z-50 overflow-hidden rounded-2xl border border-white/70 bg-white/90 shadow-2xl shadow-primary/15 backdrop-blur-2xl lg:hidden"
+              className="fixed left-4 right-4 top-[4.25rem] z-50 overflow-hidden rounded-2xl border border-white/70 bg-white/90 shadow-2xl shadow-primary/15 backdrop-blur-2xl lg:hidden"
             >
               <div className="p-2">
                 {navLinks.map((link, i) => {

@@ -122,11 +122,26 @@ function SceneText({ activeScene }: { activeScene: number }) {
   )
 }
 
-function SceneProgress({ activeScene, total }: { activeScene: number; total: number }) {
+function SceneProgress({
+  activeScene,
+  total,
+  onSelect,
+}: {
+  activeScene: number
+  total: number
+  onSelect?: (index: number) => void
+}) {
   return (
     <div className="flex items-center gap-2 rounded-xl border border-primary/15 bg-white/50 px-4 py-3 backdrop-blur-sm" aria-label="Scene progress">
       {Array.from({ length: total }).map((_, i) => (
-        <div key={i} className="flex flex-col items-center gap-1">
+        <button
+          key={i}
+          type="button"
+          onClick={() => onSelect?.(i)}
+          className="flex flex-col items-center gap-1"
+          aria-label={`Scene ${i + 1} of ${total}`}
+          aria-current={i === activeScene ? 'step' : undefined}
+        >
           <motion.div
             className="rounded-full"
             animate={{
@@ -145,7 +160,7 @@ function SceneProgress({ activeScene, total }: { activeScene: number; total: num
               {i + 1}/{total}
             </motion.span>
           )}
-        </div>
+        </button>
       ))}
     </div>
   )
@@ -195,17 +210,16 @@ export function ProductExplodedSection() {
   return (
     <section
       ref={containerRef}
-      className="relative h-[150vh] mesh-bg md:h-[190vh] lg:h-[220vh]"
+      className="relative mesh-bg py-8 lg:h-[220vh] lg:py-0"
       aria-label="BioLoop-60 product exploration"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/[0.06] blur-[100px]" />
       </div>
 
-      <div className="sticky top-14 z-10 flex min-h-0 items-center overflow-hidden max-lg:py-6 lg:h-[calc(100vh-3.5rem)]">
-        <div className="mx-auto flex h-full w-full max-w-6xl flex-col px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:gap-8 lg:px-8">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 sm:px-6 lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] lg:flex-row lg:items-center lg:gap-8 lg:px-8">
           {/* Product */}
-          <div className="relative order-1 flex h-[32vh] max-h-[280px] shrink-0 items-center justify-center sm:h-[36vh] sm:max-h-[320px] md:max-h-[360px] lg:order-2 lg:h-full lg:max-h-none">
+          <div className="relative order-1 flex h-[240px] shrink-0 items-center justify-center sm:h-[280px] md:h-[320px] lg:order-2 lg:h-full lg:max-h-none lg:flex-1">
             <div className="pointer-events-none absolute bottom-[8%] left-1/2 h-14 w-[65%] -translate-x-1/2 rounded-[100%] bg-[radial-gradient(ellipse_at_center,rgba(74,124,68,0.18)_0%,transparent_70%)] blur-md" />
 
             <div className="relative h-[90%] w-full max-w-md">
@@ -237,8 +251,12 @@ export function ProductExplodedSection() {
           </div>
 
           {/* Text */}
-          <div className="relative order-2 flex flex-col justify-center gap-3 py-3 sm:gap-4 sm:py-4 lg:order-1 lg:gap-5 lg:py-0">
-            <SceneProgress activeScene={activeScene} total={SCENE_COUNT} />
+          <div className="relative order-2 flex flex-col justify-center gap-3 sm:gap-4 lg:order-1 lg:flex-1 lg:gap-5">
+            <SceneProgress
+              activeScene={activeScene}
+              total={SCENE_COUNT}
+              onSelect={setActiveScene}
+            />
             <SceneText activeScene={activeScene} />
 
             <div className="hidden flex-wrap gap-2 md:flex xl:hidden">
@@ -255,9 +273,9 @@ export function ProductExplodedSection() {
             <EzButton href="/shop/bioloop-60" variant="primary" className="w-fit text-xs">
               Explore BioLoop-60
             </EzButton>
+            <p className="text-xs text-muted-foreground lg:hidden">Tap the dots above to explore each view</p>
             <p className="hidden text-xs text-muted-foreground lg:block">Scroll to explore each view →</p>
           </div>
-        </div>
       </div>
     </section>
   )
