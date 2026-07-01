@@ -1,6 +1,6 @@
 export const WHATSAPP_NUMBER = '923359463244'
 export const WHATSAPP_DISPLAY = '+92 335 9463244'
-export const CONTACT_EMAIL = 'hello@ecozindagi.pk'
+export const CONTACT_EMAIL = 'ceo@ecozindagi.com'
 export const CONTACT_LOCATION = 'eEarn Innovation Hub, Hasan Chowk, Mureer, Murree Rd, Chamanzar Colony, Rawalpindi, 46000, Pakistan'
 export const CONTACT_MAPS_URL =
   'https://www.google.com/maps/search/?api=1&query=eEarn+Innovation+Hub+Hasan+Chowk+Mureer+Murree+Rd+Chamanzar+Colony+Rawalpindi+46000+Pakistan'

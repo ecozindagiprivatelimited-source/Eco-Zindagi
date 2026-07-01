@@ -1,12 +1,13 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useActionState, useState } from 'react'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { GlassCard } from '@/components/glass-card'
 import { teamMembers, internOpenings, type TeamMember } from '@/lib/product-data'
+import { submitInternApplication, type ApplyState } from '@/app/actions/intern-apply'
 
 const typeLabels = {
   founder: 'Leadership',
@@ -53,6 +54,74 @@ function MemberCard({ member, photoSize = 'md' }: { member: TeamMember; photoSiz
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{member.bio}</p>
       </div>
     </div>
+  )
+}
+
+function InternForm() {
+  const [state, action, pending] = useActionState<ApplyState, FormData>(submitInternApplication, null)
+  const [selected, setSelected] = useState('')
+
+  return (
+    <form action={action} className="mt-6 space-y-4">
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label className="mb-1 block text-xs font-semibold text-foreground">Full Name</label>
+          <input
+            name="name"
+            required
+            placeholder="Your name"
+            className="w-full rounded-lg border border-primary/20 bg-white/60 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          />
+        </div>
+        <div>
+          <label className="mb-1 block text-xs font-semibold text-foreground">Email</label>
+          <input
+            name="email"
+            type="email"
+            required
+            placeholder="your@email.com"
+            className="w-full rounded-lg border border-primary/20 bg-white/60 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          />
+        </div>
+      </div>
+      <div>
+        <label className="mb-1 block text-xs font-semibold text-foreground">Role Applying For</label>
+        <select
+          name="role"
+          required
+          value={selected}
+          onChange={(e) => setSelected(e.target.value)}
+          className="w-full rounded-lg border border-primary/20 bg-white/60 px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+        >
+          <option value="" disabled>Select a role…</option>
+          {internOpenings.map((r) => (
+            <option key={r} value={r}>{r}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        <label className="mb-1 block text-xs font-semibold text-foreground">Why do you want to join?</label>
+        <textarea
+          name="message"
+          required
+          rows={4}
+          placeholder="Tell us about yourself, your skills, and why you're passionate about sustainability…"
+          className="w-full rounded-lg border border-primary/20 bg-white/60 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+        />
+      </div>
+      {state && (
+        <p className={`rounded-lg px-4 py-2.5 text-sm font-medium ${state.success ? 'bg-primary/10 text-primary' : 'bg-destructive/10 text-destructive'}`}>
+          {state.message}
+        </p>
+      )}
+      <button
+        type="submit"
+        disabled={pending}
+        className="inline-flex w-full items-center justify-center rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-60 sm:w-auto"
+      >
+        {pending ? 'Sending…' : 'Submit Application'}
+      </button>
+    </form>
   )
 }
 
@@ -220,14 +289,7 @@ export default function TeamPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-6 text-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90"
-                >
-                  Apply via Contact
-                </Link>
-              </div>
+              <InternForm />
             </GlassCard>
           </div>
         </section>

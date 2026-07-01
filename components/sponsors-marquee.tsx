@@ -32,13 +32,13 @@ export function SponsorsMarquee() {
           {[...partners, ...partners].map((p, i) => (
             <div
               key={i}
-              className="mx-8 flex h-14 w-36 flex-shrink-0 items-center justify-center grayscale transition-[filter] duration-300 hover:grayscale-0 sm:mx-12 sm:h-16 sm:w-44"
+              className="mx-10 flex h-20 w-44 flex-shrink-0 items-center justify-center grayscale transition-[filter] duration-300 hover:grayscale-0 sm:mx-14 sm:h-24 sm:w-56"
             >
               <Image
                 src={`/partners/${p.file}`}
                 alt={p.name}
-                width={176}
-                height={64}
+                width={224}
+                height={96}
                 className="h-full w-full object-contain"
               />
             </div>
