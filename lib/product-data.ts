@@ -185,6 +185,13 @@ export const teamMembers: TeamMember[] = [
     type: 'advisor',
   },
   {
+    name: 'Dr. Maha Rehman',
+    role: 'Sustainability Advisor',
+    bio: 'Pakistani biotechnologist, Research Officer at PCSIR Islamabad, and CEO of Bahar MediCart. Brings expertise in biotechnology, healthcare innovation, environmental biotechnology, molecular biology, bioinformatics, and research to support long-term sustainable impact.',
+    image: '/team/dr-maha-rehman.png',
+    type: 'advisor',
+  },
+  {
     name: 'Lilah Ahmad',
     role: 'Sustainability & Material Intern',
     bio: 'Material engineer skilled in sustainability, advanced materials, failure analysis, and technical optimization — with experience in engineering documentation and sustainable development.',
@@ -217,6 +224,27 @@ export const teamMembers: TeamMember[] = [
     role: 'AI Researcher & Software Intern',
     bio: 'GIKI Software Engineering student and AI researcher working on medical diagnosis, computer vision, NLP, and generative AI — with leadership at ACM GIKI and SOPHEP.',
     image: '/team/toqeer-ahmed.png',
+    type: 'intern',
+  },
+  {
+    name: 'Yashir Nadeem',
+    role: 'IoT & Sustainability Intern',
+    bio: 'Aspiring Chemical Engineer and sustainability advocate with a strong interest in water, environment, and low-cost sustainable solutions. Brings community service experience from Alkhidmat Foundation Pakistan, The Citizens Foundation, UN Movers Program, and Millennium Campus Network, with a focus on SDG 6: Clean Water & Sanitation.',
+    image: '/team/yashir-nadeem.png',
+    type: 'intern',
+  },
+  {
+    name: 'Abdullah Ijaz',
+    role: 'AI Intern / IoT Division',
+    bio: 'Software Engineering student at GIKI focused on full-stack development, intelligent systems, and scalable backend solutions. Technical skills span React, Flask, Django, AI & Machine Learning, TensorFlow, Scikit-Learn, NLP, AWS, Docker, GitHub Actions, CI/CD, and REST APIs.',
+    image: '/team/abdullah-ijaz.png',
+    type: 'intern',
+  },
+  {
+    name: 'Masooma Tassaduq',
+    role: 'Research Assistant',
+    bio: 'Biotechnologist and Research Assistant contributing to sustainability-focused research initiatives. Supports environmental responsibility, sustainable solutions, innovation, and science-driven impact to help Eco Zindagi build practical solutions for people and the planet.',
+    image: '/team/masooma-tassaduq.png',
     type: 'intern',
   },
 ]

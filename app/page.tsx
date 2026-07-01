@@ -12,6 +12,7 @@ import { HeroSection } from '@/components/hero-section'
 import { SocietiesSection } from '@/components/societies-section'
 import { BlogCard } from '@/components/blog-card'
 import { EzButton } from '@/components/ez-button'
+import { SponsorsMarquee } from '@/components/sponsors-marquee'
 import { motion } from 'framer-motion'
 
 const pillars = [
@@ -104,6 +105,8 @@ export default function Home() {
             ))}
           </div>
         </HomeSection>
+
+        <SponsorsMarquee />
 
         {/* Blog preview */}
         <HomeSection tight>

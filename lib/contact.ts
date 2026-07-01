@@ -1,9 +1,9 @@
 export const WHATSAPP_NUMBER = '923359463244'
 export const WHATSAPP_DISPLAY = '+92 335 9463244'
 export const CONTACT_EMAIL = 'hello@ecozindagi.pk'
-export const CONTACT_LOCATION = 'Alpha Techno Square - NASTP, Rawalpindi, Pakistan'
+export const CONTACT_LOCATION = 'eEarn Innovation Hub, Hasan Chowk, Mureer, Murree Rd, Chamanzar Colony, Rawalpindi, 46000, Pakistan'
 export const CONTACT_MAPS_URL =
-  'https://www.google.com/maps/search/?api=1&query=Alpha+Techno+Square+NASTP+Rawalpindi+Pakistan'
+  'https://www.google.com/maps/search/?api=1&query=eEarn+Innovation+Hub+Hasan+Chowk+Mureer+Murree+Rd+Chamanzar+Colony+Rawalpindi+46000+Pakistan'
 
 export function whatsappUrl(message?: string): string {
   const text = message ?? 'Hi Eco Zindagi! I would like to know more about your products.'
@@ -11,8 +11,8 @@ export function whatsappUrl(message?: string): string {
 }
 
 export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/company/ecozindagi',
-  facebook: 'https://facebook.com/ecozindagi',
-  instagram: 'https://instagram.com/ecozindagi',
-  email: `mailto:${CONTACT_EMAIL}`,
+  linkedin: 'https://www.linkedin.com/company/eco-zindagi/',
+  facebook: 'https://www.facebook.com/profile.php?id=61574371894937',
+  instagram: 'https://www.instagram.com/ecozindagi.pk?igsh=YzQ3MG9mMWQ0aGZh',
+  whatsapp: whatsappUrl(),
 } as const
