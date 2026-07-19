@@ -28,7 +28,7 @@ export const products: Product[] = [
     name: 'BioLoop-60 Zero-Waste System',
     slug: 'bioloop-60',
     category: 'Smart Bins',
-    price: 89999,
+    price: 44999,
     image: '/products/bioloop-60.png',
     description: 'Flagship smart composting & waste-sorting unit for modern Pakistani homes.',
     longDescription:
