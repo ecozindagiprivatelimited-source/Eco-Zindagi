@@ -11,7 +11,7 @@ import {
 
 const footerLinks = {
   products: [
-    { label: 'BioLoop-60', href: '/shop/bioloop-60' },
+    { label: 'Ec', href: '/shop/bioloop-60' },
     { label: 'Basic Zero-Waste Bin', href: '/shop/basic-zero-waste-bin' },
     { label: 'Eco Caddy Mini', href: '/shop/eco-caddy-mini' },
     { label: 'BrownBoost', href: '/shop/brownboost-2kg' },

@@ -107,7 +107,7 @@ export default function PartnershipsPage() {
             <div className="space-y-4">
               {[
                 { step: '01', title: 'Site Assessment', desc: 'Our team visits your society or city block to map waste flows, space, and community needs.' },
-                { step: '02', title: 'Custom Deployment', desc: 'We install BioLoop-60 units in homes and Community BioLoop 120L at central collection points.' },
+                { step: '02', title: 'Custom Deployment', desc: 'We install EcoBuck units in homes and Community BioLoop 120L at central collection points.' },
                 { step: '03', title: 'Training & Onboarding', desc: 'Residents, staff, and management teams learn segregation, maintenance, and circular operations.' },
                 { step: '04', title: 'Ongoing Support', desc: 'Filters, refills, sensor monitoring, and Eco Zindagi team support keep the system running clean.' },
               ].map((s, i) => (

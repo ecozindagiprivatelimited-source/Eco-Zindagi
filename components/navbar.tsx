@@ -189,7 +189,7 @@ export function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="mt-2 block rounded-xl bg-primary px-4 py-3 text-center text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25"
                 >
-                  Shop BioLoop-60
+                  Shop EcoBuck
                 </Link>
               </div>
             </motion.div>

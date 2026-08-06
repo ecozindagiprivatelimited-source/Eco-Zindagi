@@ -138,7 +138,7 @@ export default function Home() {
               Join Pakistan&apos;s Zero-Waste Movement
             </h2>
             <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
-              From kitchen caddies to community BioLoop systems — start where you are, grow with us.
+              From kitchen caddies to community EcoBuck systems — start where you are, grow with us.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <EzButton href="/shop" variant="primary">Shop Products</EzButton>

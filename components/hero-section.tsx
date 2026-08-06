@@ -176,7 +176,7 @@ export function HeroSection() {
                 variant="ghost"
                 className="text-xs sm:text-sm"
               >
-                Explore BioLoop-60
+                Explore - EcoBuck
               </EzButton>
 
               <EzButton
@@ -226,7 +226,7 @@ export function HeroSection() {
                 transition={{ delay: 1.1 }}
                 className="absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full border border-primary/25 bg-white/60 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-primary backdrop-blur-sm"
               >
-                BioLoop-60
+                EcoBuck
               </motion.div>
             </div>
             <MobileCalloutPills />

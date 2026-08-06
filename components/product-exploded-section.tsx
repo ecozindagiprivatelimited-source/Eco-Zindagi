@@ -14,11 +14,11 @@ import { EzButton } from '@/components/ez-button'
 export const EXPLODED_SCENES = [
   {
     id: 'closed',
-    title: 'Meet BioLoop-60',
+    title: 'Meet EcoBuck',
     description:
       'A compact smart composting and waste-sorting device designed for modern indoor spaces.',
     image: BIOLOOP_IMAGES.product,
-    imageAlt: 'BioLoop-60 closed product view',
+    imageAlt: 'EcoBuck closed product view',
   },
   {
     id: 'drawers',
@@ -26,7 +26,7 @@ export const EXPLODED_SCENES = [
     description:
       'Organic waste, dry recyclables, and reject waste stay separated at the source through dedicated modular drawers.',
     image: BIOLOOP_IMAGES.drawersOpen,
-    imageAlt: 'BioLoop-60 with drawers open',
+    imageAlt: 'EcoBuck with drawers open',
   },
   {
     id: 'semi-exploded',
@@ -112,7 +112,7 @@ function SceneText({ activeScene }: { activeScene: number }) {
         transition={{ duration: 0.4 }}
         className="space-y-3"
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">BioLoop-60</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">EcoBuck</p>
         <h2 className="font-heading text-balance text-2xl font-bold leading-[1.12] text-foreground sm:text-3xl">
           {scene.title}
         </h2>
@@ -211,71 +211,71 @@ export function ProductExplodedSection() {
     <section
       ref={containerRef}
       className="relative mesh-bg pb-2 pt-4 sm:pt-5 lg:h-[115vh] lg:pb-0 lg:pt-0"
-      aria-label="BioLoop-60 product exploration"
+      aria-label="EcoBuck product exploration"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/[0.06] blur-[100px]" />
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 sm:gap-5 sm:px-6 lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] lg:flex-row lg:items-center lg:gap-8 lg:px-8">
-          {/* Product */}
-          <div className="relative order-1 flex h-[200px] shrink-0 items-center justify-center sm:h-[240px] md:h-[280px] lg:order-2 lg:h-full lg:max-h-none lg:flex-1">
-            <div className="pointer-events-none absolute bottom-[8%] left-1/2 h-14 w-[65%] -translate-x-1/2 rounded-[100%] bg-[radial-gradient(ellipse_at_center,rgba(74,124,68,0.18)_0%,transparent_70%)] blur-md" />
+        {/* Product */}
+        <div className="relative order-1 flex h-[200px] shrink-0 items-center justify-center sm:h-[240px] md:h-[280px] lg:order-2 lg:h-full lg:max-h-none lg:flex-1">
+          <div className="pointer-events-none absolute bottom-[8%] left-1/2 h-14 w-[65%] -translate-x-1/2 rounded-[100%] bg-[radial-gradient(ellipse_at_center,rgba(74,124,68,0.18)_0%,transparent_70%)] blur-md" />
 
-            <div className="relative h-[90%] w-full max-w-md">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={scene.id}
-                  initial={{ opacity: 0, scale: 0.97 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.02 }}
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative h-full w-full"
-                >
-                  <Image
-                    src={scene.image}
-                    alt={scene.imageAlt}
-                    fill
-                    sizes="(max-width: 1024px) 90vw, 50vw"
-                    className="object-contain object-center drop-shadow-[0_16px_32px_rgba(45,80,55,0.15)]"
-                    priority={activeScene === 0}
-                  />
-                </motion.div>
-              </AnimatePresence>
+          <div className="relative h-[90%] w-full max-w-md">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={scene.id}
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.02 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                className="relative h-full w-full"
+              >
+                <Image
+                  src={scene.image}
+                  alt={scene.imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 50vw"
+                  className="object-contain object-center drop-shadow-[0_16px_32px_rgba(45,80,55,0.15)]"
+                  priority={activeScene === 0}
+                />
+              </motion.div>
+            </AnimatePresence>
 
-              {labels.map((l) => (
-                <SceneLabel key={l.label} {...l} />
-              ))}
-            </div>
-            <MobileLabelPills activeScene={activeScene} />
+            {labels.map((l) => (
+              <SceneLabel key={l.label} {...l} />
+            ))}
+          </div>
+          <MobileLabelPills activeScene={activeScene} />
+        </div>
+
+        {/* Text */}
+        <div className="relative order-2 flex flex-col justify-center gap-3 sm:gap-4 lg:order-1 lg:flex-1 lg:gap-5">
+          <SceneProgress
+            activeScene={activeScene}
+            total={SCENE_COUNT}
+            onSelect={setActiveScene}
+          />
+          <SceneText activeScene={activeScene} />
+
+          <div className="hidden flex-wrap gap-2 md:flex xl:hidden">
+            {labels.map((l) => (
+              <span
+                key={l.label}
+                className="rounded-full border border-primary/20 bg-white/60 px-3 py-1.5 text-xs font-semibold text-foreground backdrop-blur-sm"
+              >
+                {l.label}
+              </span>
+            ))}
           </div>
 
-          {/* Text */}
-          <div className="relative order-2 flex flex-col justify-center gap-3 sm:gap-4 lg:order-1 lg:flex-1 lg:gap-5">
-            <SceneProgress
-              activeScene={activeScene}
-              total={SCENE_COUNT}
-              onSelect={setActiveScene}
-            />
-            <SceneText activeScene={activeScene} />
-
-            <div className="hidden flex-wrap gap-2 md:flex xl:hidden">
-              {labels.map((l) => (
-                <span
-                  key={l.label}
-                  className="rounded-full border border-primary/20 bg-white/60 px-3 py-1.5 text-xs font-semibold text-foreground backdrop-blur-sm"
-                >
-                  {l.label}
-                </span>
-              ))}
-            </div>
-
-            <EzButton href="/shop/bioloop-60" variant="primary" className="w-fit text-xs">
-              Explore BioLoop-60
-            </EzButton>
-            <p className="text-xs text-muted-foreground lg:hidden">Tap the dots above to explore each view</p>
-            <p className="hidden text-xs text-muted-foreground lg:block">Scroll to explore each view →</p>
-          </div>
+          <EzButton href="/shop/bioloop-60" variant="primary" className="w-fit text-xs">
+            Explore EcoBuck
+          </EzButton>
+          <p className="text-xs text-muted-foreground lg:hidden">Tap the dots above to explore each view</p>
+          <p className="hidden text-xs text-muted-foreground lg:block">Scroll to explore each view →</p>
+        </div>
       </div>
     </section>
   )

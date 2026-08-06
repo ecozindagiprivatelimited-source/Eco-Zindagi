@@ -8,8 +8,8 @@ import { EzButton } from '@/components/ez-button'
 import { HomeSection, SectionHeader } from '@/components/home-section'
 
 const benefits = [
-  { title: 'Society-Wide Segregation', desc: 'Install BioLoop units across blocks — organics, recyclables, and reject handled at source.', icon: '🏘️' },
-  { title: 'City-Scale Pilots', desc: 'Deploy Community BioLoop 120L in schools, markets, and public spaces across your municipality.', icon: '🏙️' },
+  { title: 'Society-Wide Segregation', desc: 'Install EcoBuck units across blocks — organics, recyclables, and reject handled at source.', icon: '🏘️' },
+  { title: 'City-Scale Pilots', desc: 'Deploy Community EcoBuck 120L in schools, markets, and public spaces across your municipality.', icon: '🏙️' },
   { title: 'Biogas & Digestate', desc: 'Turn community waste into supplemental biogas and nutrient-rich output for green spaces.', icon: '⚡' },
   { title: 'Full Team Support', desc: 'Eco Zindagi handles installation, training, maintenance, and ongoing circular operations.', icon: '🛠️' },
 ]
