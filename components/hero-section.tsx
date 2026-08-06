@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import { BIOLOOP_PRODUCT_IMAGE, BIOLOOP_PRODUCT_ALT } from '@/lib/bioloop-assets'
 import { GlassCard } from '@/components/glass-card'
 import { EzButton } from '@/components/ez-button'
+import Link from 'next/link'
+
 
 const HERO_FEATURES = [
   { label: '3 Smart Waste Streams', icon: '♻️' },
@@ -45,7 +47,7 @@ const PRODUCT_CALLOUTS = [
   },
 ] as const
 
-const TICKER = ['BIOLOOP-60', 'ZERO-WASTE SYSTEM', 'BIOGAS READY', 'MADE IN PAKISTAN', 'CLEAN-TECH STARTUP']
+const TICKER = ['EcoBuck', 'ZERO-WASTE SYSTEM', 'BIOGAS READY', 'MADE IN PAKISTAN', 'CLEAN-TECH STARTUP']
 
 function ProductCallout({
   label,
@@ -161,10 +163,27 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
-              <EzButton href="/shop/bioloop-60" variant="primary" className="text-xs sm:text-sm">
+              <EzButton
+                href="/prebook"
+                variant="primary"
+                className="text-xs sm:text-sm"
+              >
+                Pre-book EcoBuck
+              </EzButton>
+
+              <EzButton
+                href="/shop/bioloop-60"
+                variant="ghost"
+                className="text-xs sm:text-sm"
+              >
                 Explore BioLoop-60
               </EzButton>
-              <EzButton href="/team" variant="ghost" className="text-xs sm:text-sm">
+
+              <EzButton
+                href="/team"
+                variant="ghost"
+                className="text-xs sm:text-sm"
+              >
                 Meet the Team
               </EzButton>
             </div>

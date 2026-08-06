@@ -12,4 +12,4 @@ export const BIOLOOP_IMAGES = {
 } as const
 
 export const BIOLOOP_PRODUCT_ALT =
-  'BioLoop-60 smart household zero-waste system by Eco Zindagi'
+  'EcoBuck smart household zero-waste system by Eco Zindagi'

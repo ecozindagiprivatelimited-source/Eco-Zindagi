@@ -25,10 +25,10 @@ export interface TeamMember {
 export const products: Product[] = [
   {
     id: '1',
-    name: 'BioLoop-60 Zero-Waste System',
+    name: 'EcoBuck',
     slug: 'bioloop-60',
     category: 'Smart Bins',
-    price: 44999,
+    price: 34999,
     image: '/products/bioloop-60.png',
     description: 'Flagship smart composting & waste-sorting unit for modern Pakistani homes.',
     longDescription:

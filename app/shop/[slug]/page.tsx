@@ -20,7 +20,7 @@ export default function ProductDetailPage() {
   const product = getProductBySlug(slug)
   const { addToCart } = useCart()
   const { formatPrice } = useCurrency()
-  const [quantity, setQuantity] = useState(1)
+
   const [showAddedMessage, setShowAddedMessage] = useState(false)
 
   if (!product) {
@@ -45,14 +45,14 @@ export default function ProductDetailPage() {
     .slice(0, 4)
 
   const purchasable = isProductPurchasable(product.slug)
-
   const handleAddToCart = () => {
     if (!purchasable) return
-    addToCart(product, quantity)
+
+    addToCart(product, 1)
+
     setShowAddedMessage(true)
     setTimeout(() => setShowAddedMessage(false), 2000)
   }
-
   return (
     <>
       <Navbar />
@@ -176,42 +176,33 @@ export default function ProductDetailPage() {
                     </ul>
                   </div>
                 )}
-
                 {purchasable ? (
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4 rounded-lg border border-border bg-card p-4">
-                      <label className="text-sm font-medium text-foreground">Quantity:</label>
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                          className="h-8 w-8 rounded-lg border border-border transition-colors hover:bg-muted"
-                        >
-                          −
-                        </button>
-                        <span className="w-8 text-center font-semibold">{quantity}</span>
-                        <button
-                          onClick={() => setQuantity(quantity + 1)}
-                          className="h-8 w-8 rounded-lg border border-border transition-colors hover:bg-muted"
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-
+                  <div className="w-full space-y-4">
                     <button
                       onClick={handleAddToCart}
                       disabled={!product.inStock}
-                      className="w-full rounded-lg bg-accent py-4 text-lg font-semibold text-accent-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                      className="w-full rounded-2xl bg-accent py-5 text-lg font-semibold text-accent-foreground transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
                     >
-                      {showAddedMessage ? '✓ Added to Cart' : 'Add to Cart'}
+                      {showAddedMessage ? "✓ Added to Cart" : "Add to Cart"}
                     </button>
+
+                    <Link
+                      href="/prebook"
+                      className="flex w-full items-center justify-center rounded-2xl bg-primary py-5 text-lg font-semibold text-primary-foreground transition-all hover:opacity-90"
+                    >
+                      Book Now
+                    </Link>
                   </div>
                 ) : (
                   <div className="rounded-xl border border-primary/20 bg-primary/5 p-5 text-center">
-                    <p className="text-sm font-semibold text-foreground">This product is not available yet</p>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      We&apos;re launching soon. Shop BioLoop-60 and filter refills today.
+                    <p className="text-sm font-semibold text-foreground">
+                      This product is not available yet
                     </p>
+
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      We&apos;re launching soon. Shop EcoBuck and filter refills today.
+                    </p>
+
                     <Link
                       href="/shop"
                       className="mt-4 inline-block text-sm font-semibold text-primary hover:underline"

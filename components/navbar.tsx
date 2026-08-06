@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
+
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/shop', label: 'Shop' },
@@ -82,12 +83,21 @@ export function Navbar() {
             <div className="flex items-center gap-2">
               <CurrencySelector className="hidden lg:inline-flex" />
 
-              <Link
-                href="/shop/bioloop-60"
-                className="hidden rounded-xl bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:brightness-105 active:scale-[0.98] lg:inline-flex"
-              >
-                Shop Now
-              </Link>
+              <div className="hidden lg:flex items-center gap-2">
+                <Link
+                  href="/shop/bioloop-60"
+                  className="rounded-xl border border-primary bg-white px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary transition-all hover:bg-primary/5"
+                >
+                  Shop Now
+                </Link>
+
+                <Link
+                  href="/prebook"
+                  className="rounded-xl bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:brightness-105"
+                >
+                  Book Now
+                </Link>
+              </div>
 
               <Link
                 href="/cart"
