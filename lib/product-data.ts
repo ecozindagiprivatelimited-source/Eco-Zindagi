@@ -165,7 +165,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Sadeeq Khan',
-    role: 'Partner / Founder & Senior Program Manager',
+    role: ' Senior Program Manager',
     bio: 'Startup community builder with GCC and UAE market experience. Drives Eco Zindagi’s growth through strategic planning, partnerships, and high-impact team building.',
     image: '/team/sadeeq-khan.png',
     type: 'partner',
