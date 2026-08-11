@@ -198,20 +198,20 @@ export const teamMembers: TeamMember[] = [
     image: '/team/lilah-ahmad.png',
     type: 'intern',
   },
-  {
-    name: 'Arsalan Khalil',
-    role: 'AI Intern',
-    bio: 'Emerging ML engineer focused on intelligent systems, MLOps, LLM fine-tuning, seismic detection, explainable AI, and scalable deployment.',
-    image: '/team/arsalan-khalil.png',
-    type: 'intern',
-  },
-  {
-    name: 'Waleed Tariq',
-    role: 'AI Intern / IoT Division',
-    bio: 'GIKI software engineering student building AI-integrated systems with Python, Flask, Django, AWS, Docker, NLP, and chatbot development.',
-    image: '/team/waleed-tariq.png',
-    type: 'intern',
-  },
+  // {
+  //   name: 'Arsalan Khalil',
+  //   role: 'AI Intern',
+  //   bio: 'Emerging ML engineer focused on intelligent systems, MLOps, LLM fine-tuning, seismic detection, explainable AI, and scalable deployment.',
+  //   image: '/team/arsalan-khalil.png',
+  //   type: 'intern',
+  // },
+  // {
+  //   name: 'Waleed Tariq',
+  //   role: 'AI Intern / IoT Division',
+  //   bio: 'GIKI software engineering student building AI-integrated systems with Python, Flask, Django, AWS, Docker, NLP, and chatbot development.',
+  //   image: '/team/waleed-tariq.png',
+  //   type: 'intern',
+  // },
   {
     name: 'Alishba Farrukh',
     role: 'Sustainability & Design Intern',
@@ -226,27 +226,27 @@ export const teamMembers: TeamMember[] = [
     image: '/team/toqeer-ahmed.png',
     type: 'intern',
   },
-  {
-    name: 'Yashir Nadeem',
-    role: 'IoT & Sustainability Intern',
-    bio: 'Aspiring Chemical Engineer and sustainability advocate with a strong interest in water, environment, and low-cost sustainable solutions. Brings community service experience from Alkhidmat Foundation Pakistan, The Citizens Foundation, UN Movers Program, and Millennium Campus Network, with a focus on SDG 6: Clean Water & Sanitation.',
-    image: '/team/yashir-nadeem.png',
-    type: 'intern',
-  },
-  {
-    name: 'Abdullah Ijaz',
-    role: 'AI Intern / IoT Division',
-    bio: 'Software Engineering student at GIKI focused on full-stack development, intelligent systems, and scalable backend solutions. Technical skills span React, Flask, Django, AI & Machine Learning, TensorFlow, Scikit-Learn, NLP, AWS, Docker, GitHub Actions, CI/CD, and REST APIs.',
-    image: '/team/abdullah-ijaz.png',
-    type: 'intern',
-  },
-  {
-    name: 'Masooma Tassaduq',
-    role: 'Research Assistant',
-    bio: 'Biotechnologist and Research Assistant contributing to sustainability-focused research initiatives. Supports environmental responsibility, sustainable solutions, innovation, and science-driven impact to help Eco Zindagi build practical solutions for people and the planet.',
-    image: '/team/masooma-tassaduq.png',
-    type: 'intern',
-  },
+  // {
+  //   name: 'Yashir Nadeem',
+  //   role: 'IoT & Sustainability Intern',
+  //   bio: 'Aspiring Chemical Engineer and sustainability advocate with a strong interest in water, environment, and low-cost sustainable solutions. Brings community service experience from Alkhidmat Foundation Pakistan, The Citizens Foundation, UN Movers Program, and Millennium Campus Network, with a focus on SDG 6: Clean Water & Sanitation.',
+  //   image: '/team/yashir-nadeem.png',
+  //   type: 'intern',
+  // },
+  // {
+  //   name: 'Abdullah Ijaz',
+  //   role: 'AI Intern / IoT Division',
+  //   bio: 'Software Engineering student at GIKI focused on full-stack development, intelligent systems, and scalable backend solutions. Technical skills span React, Flask, Django, AI & Machine Learning, TensorFlow, Scikit-Learn, NLP, AWS, Docker, GitHub Actions, CI/CD, and REST APIs.',
+  //   image: '/team/abdullah-ijaz.png',
+  //   type: 'intern',
+  // },
+  // {
+  //   name: 'Masooma Tassaduq',
+  //   role: 'Research Assistant',
+  //   bio: 'Biotechnologist and Research Assistant contributing to sustainability-focused research initiatives. Supports environmental responsibility, sustainable solutions, innovation, and science-driven impact to help Eco Zindagi build practical solutions for people and the planet.',
+  //   image: '/team/masooma-tassaduq.png',
+  //   type: 'intern',
+  // },
 ]
 
 export const internOpenings = [
