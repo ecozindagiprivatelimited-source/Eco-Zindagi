@@ -26,13 +26,13 @@ export const products: Product[] = [
   {
     id: '1',
     name: 'EcoBuck',
-    slug: 'bioloop-60',
+    slug: 'EcoBuck',
     category: 'Smart Bins',
     price: 34999,
     image: '/products/bioloop-60.png',
     description: 'Flagship smart composting & waste-sorting unit for modern Pakistani homes.',
     longDescription:
-      'BioLoop-60 separates organics, dry recyclables, and reject waste at the source. Charcoal filtration, bio-inoculum support, and sensor monitoring keep processing odor-free and indoor-friendly while connecting to app insights and EcoBucks rewards.',
+      'EcoBuck separates organics, dry recyclables, and reject waste at the source. Charcoal filtration, bio-inoculum support, and sensor monitoring keep processing odor-free and indoor-friendly while connecting to app insights and EcoBucks rewards.',
     specs: ['8L Organics Caddy', '12L Dry Recyclables', '4L Reject Drawer', '28L Compost Starter'],
     ecoScore: 98,
     inStock: true,
@@ -70,11 +70,11 @@ export const products: Product[] = [
   },
   {
     id: '4',
-    name: 'Community BioLoop 120L',
-    slug: 'community-bioloop-120l',
+    name: 'Community EcoBuck 120L',
+    slug: 'community-ecobuck-120l',
     category: 'Smart Bins',
     price: 449999,
-    image: '/products/community-bioloop-120l.png',
+    image: '/products/community-ecobuck-120l.png',
     description: 'Institutional zero-waste & supplemental biogas pilot unit for schools and societies.',
     longDescription:
       'Designed for schools, universities, cafés, and housing societies. Segregates organics, recyclables, and reject waste while producing low-pressure biogas and nutrient-rich digestate through anaerobic digestion.',

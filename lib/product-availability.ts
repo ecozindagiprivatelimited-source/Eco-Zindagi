@@ -1,7 +1,7 @@
 /** Products currently available to buy — all others show as Coming Soon */
 
 export const PURCHASABLE_SLUGS = [
-  'bioloop-60',
+  'EcoBuck',
   'activated-carbon-filter',
   'odorguard-cartridge',
 ] as const

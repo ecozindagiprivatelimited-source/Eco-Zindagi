@@ -11,7 +11,7 @@ import {
 
 const footerLinks = {
   products: [
-    { label: 'Ec', href: '/shop/bioloop-60' },
+    { label: 'EcoBuck ', href: '/shop/EcoBuck' },
     { label: 'Basic Zero-Waste Bin', href: '/shop/basic-zero-waste-bin' },
     { label: 'Eco Caddy Mini', href: '/shop/eco-caddy-mini' },
     { label: 'BrownBoost', href: '/shop/brownboost-2kg' },
@@ -64,7 +64,8 @@ export function Footer() {
 
         <div className="grid grid-cols-1 gap-8 py-10 md:grid-cols-12 md:gap-6">
           <div className="md:col-span-5">
-            <div className="mb-4 inline-block rounded-xl bg-white px-3 py-2">
+            {/* <div className="mb-4 inline-block rounded-xl bg-white px-3 py-2"> */}
+             <div className="mb-4 inline-block rounded-xl  px-3 py-2">
               <Logo size="sm" link={false} />
             </div>
             <p className="mb-4 max-w-sm text-sm leading-relaxed text-white/75">

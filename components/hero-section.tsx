@@ -172,7 +172,7 @@ export function HeroSection() {
               </EzButton>
 
               <EzButton
-                href="/shop/bioloop-60"
+                href="/shop/EcoBuck"
                 variant="ghost"
                 className="text-xs sm:text-sm"
               >

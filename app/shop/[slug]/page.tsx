@@ -8,7 +8,7 @@ import { useCart } from '@/lib/cart-context'
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useCurrency } from '@/lib/currency-context'
 import { isProductPurchasable } from '@/lib/product-availability'
@@ -22,6 +22,23 @@ export default function ProductDetailPage() {
   const { formatPrice } = useCurrency()
 
   const [showAddedMessage, setShowAddedMessage] = useState(false)
+  const [prebookingsCount, setPrebookingsCount] = useState<number | null>(null)
+  const [loadingPrebookings, setLoadingPrebookings] = useState(false)
+
+  useEffect(() => {
+    if (product?.slug === 'EcoBuck') {
+      setLoadingPrebookings(true)
+      fetch('/api/prebookings')
+        .then((res) => res.json())
+        .then((data) => {
+          if (typeof data.count === 'number') {
+            setPrebookingsCount(data.count)
+          }
+        })
+        .catch((err) => console.error('Failed to load prebookings:', err))
+        .finally(() => setLoadingPrebookings(false))
+    }
+  }, [product?.slug])
 
   if (!product) {
     return (
@@ -176,6 +193,51 @@ export default function ProductDetailPage() {
                     </ul>
                   </div>
                 )}
+                {/* Prebookings Indicator for EcoBuck */}
+                {product.slug === 'EcoBuck' && prebookingsCount !== null && (
+                  <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 space-y-4 shadow-sm relative overflow-hidden transition-all hover:shadow-md">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full blur-2xl -mr-8 -mt-8" />
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span className="relative flex h-3.5 w-3.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-green-600"></span>
+                        </span>
+                        <span className="text-xs font-bold uppercase tracking-widest text-green-700 dark:text-green-400">
+                          Live Booking Status
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-extrabold bg-green-100 text-green-800 dark:bg-green-950/40 dark:text-green-300 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                        Limited Batch
+                      </span>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-muted-foreground font-semibold">Pre-bookings Reserved:</span>
+                        <span className="font-bold text-foreground">{prebookingsCount} / 100</span>
+                      </div>
+                      <div className="w-full bg-muted rounded-full h-3.5 overflow-hidden">
+                        <div 
+                          className="bg-primary h-full rounded-full transition-all duration-1000 ease-out" 
+                          style={{ width: `${Math.min(100, (prebookingsCount / 100) * 100)}%` }}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between text-sm pt-1">
+                      <span className="font-semibold text-foreground">Slots Remaining:</span>
+                      <span className="text-xl font-black text-primary animate-pulse tracking-wide">
+                        {Math.max(0, 100 - prebookingsCount)} left
+                      </span>
+                    </div>
+
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      * Secure your EcoBuck now to guarantee early delivery and launch-priority benefits. Deducted from initial 50-unit production batch.
+                    </p>
+                  </div>
+                )}
+
                 {purchasable ? (
                   <div className="w-full space-y-4">
                     <button

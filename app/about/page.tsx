@@ -18,7 +18,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center space-y-6"
           >
-            <h1 className="text-6xl font-bold text-foreground">About BioLoop</h1>
+            <h1 className="text-6xl font-bold text-foreground">About EcoBuck</h1>
             <p className="text-xl text-muted-foreground">
               Founded by climate scientists. Built for impact. Designed for everyone.
             </p>
@@ -42,10 +42,10 @@ export default function AboutPage() {
                 >
                   <h2 className="text-4xl font-bold text-foreground">Our Origin</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    BioLoop was founded in 2021 when three MIT climate researchers decided the world couldn't wait for incremental progress. We built the company around a simple idea: direct air capture technology shouldn't be locked away in labs—it should be accessible, affordable, and beautiful.
+                    EcoBuck was founded in 2021 when three MIT climate researchers decided the world couldn't wait for incremental progress. We built the company around a simple idea: direct air capture technology shouldn't be locked away in labs—it should be accessible, affordable, and beautiful.
                   </p>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    Today, BioLoop is removing millions of tons of CO₂ annually while helping individuals, businesses, and institutions take concrete action on climate. We're not a charity. We're a company that proves climate action and growth are the same thing.
+                    Today EcoBuck is removing millions of tons of CO₂ annually while helping individuals, businesses, and institutions take concrete action on climate. We're not a charity. We're a company that proves climate action and growth are the same thing.
                   </p>
                 </motion.div>
                 <motion.div

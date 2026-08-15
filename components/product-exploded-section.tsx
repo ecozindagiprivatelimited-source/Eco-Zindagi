@@ -270,7 +270,7 @@ export function ProductExplodedSection() {
             ))}
           </div>
 
-          <EzButton href="/shop/bioloop-60" variant="primary" className="w-fit text-xs">
+          <EzButton href="/shop/EcoBuck" variant="primary" className="w-fit text-xs">
             Explore EcoBuck
           </EzButton>
           <p className="text-xs text-muted-foreground lg:hidden">Tap the dots above to explore each view</p>
