@@ -198,20 +198,8 @@ export const teamMembers: TeamMember[] = [
     image: '/team/lilah-ahmad.png',
     type: 'intern',
   },
-  // {
-  //   name: 'Arsalan Khalil',
-  //   role: 'AI Intern',
-  //   bio: 'Emerging ML engineer focused on intelligent systems, MLOps, LLM fine-tuning, seismic detection, explainable AI, and scalable deployment.',
-  //   image: '/team/arsalan-khalil.png',
-  //   type: 'intern',
-  // },
-  // {
-  //   name: 'Waleed Tariq',
-  //   role: 'AI Intern / IoT Division',
-  //   bio: 'GIKI software engineering student building AI-integrated systems with Python, Flask, Django, AWS, Docker, NLP, and chatbot development.',
-  //   image: '/team/waleed-tariq.png',
-  //   type: 'intern',
-  // },
+ 
+
   {
     name: 'Alishba Farrukh',
     role: 'Sustainability & Design Intern',
@@ -219,13 +207,57 @@ export const teamMembers: TeamMember[] = [
     image: '/team/alishba-farrukh.png',
     type: 'intern',
   },
+ {
+  name: 'Zunaira Tariq',
+  role: 'Jr Software Engineer Intern',
+  bio: 'Computer Science student focused on web development, software engineering, and building practical technology solutions for a more sustainable future.',
+  image: '/team/zunaira-tariq.png',
+  type: 'intern',
+},
   {
+    name: 'Muneeba Tariq',
+    role: 'Marketing Intern',
+    bio: ' Student of Computer Science and is marketing enthusiast with a passion for sustainability, social impact, and community engagement. Focused on digital marketing, content creation, and brand strategy to support Eco Zindagi’s mission.',
+    image: '/team/muneeba-tariq.png',
+    type: 'intern',
+  },
+{
+    name: 'Eman Fatima',
+    role: 'Jr Software Engineer Intern',
+    bio: 'Passionate about building reliable software solutions and turning creative ideas into technology that makes a meaningful impact',
+    image: '/team/eman-fatima.png',
+    type: 'intern',
+  },
+   {
     name: 'Toqeer Ahmed',
     role: 'AI Researcher & Software Intern',
     bio: 'GIKI Software Engineering student and AI researcher working on medical diagnosis, computer vision, NLP, and generative AI — with leadership at ACM GIKI and SOPHEP.',
     image: '/team/toqeer-ahmed.png',
     type: 'intern',
   },
+   {
+    name: 'Ali Raza',
+    role: 'AI Automation Intern',
+    bio: 'Passionate about AI automation and building intelligent solutions that bridge technology with real-world business impact.',
+    image: '/team/ali-raza.png',
+    type: 'intern',
+  },
+
+  {
+    name: 'Awais Manzoor',
+    role: 'AI Automation Intern',
+    bio: 'Driven to turn AI and machine learning into practical, scalable solutions that create meaningful real-world impact.',
+    image: '/team/awais-manzoor.png',
+    type: 'intern',
+  },
+  {
+    name: 'Faham Ihsan',
+    role: 'Business Solutions Intern',
+    bio: 'Passionate about building reliable software solutions and turning creative ideas into technology that makes a meaningful impact',
+    image: '/team/faham-ihsan.png',
+    type: 'intern',
+  },
+
   // {
   //   name: 'Yashir Nadeem',
   //   role: 'IoT & Sustainability Intern',
