@@ -6,9 +6,9 @@ fs.mkdirSync(blogDir, { recursive: true })
 
 const covers = [
   { slug: 'zero-waste-starts-in-pakistani-kitchens', color: '#2d6a4f', icon: '🏠', label: 'Kitchen' },
-  { slug: 'bioloop-60-inside-the-engineering', color: '#1b4332', icon: '⚙️', label: 'BioLoop' },
+  { slug: 'EcoBuck-inside-the-engineering', color: '#1b4332', icon: '⚙️', label: 'EcoBuck' },
   { slug: 'brownboost-and-the-carbon-balance', color: '#6b4c2a', icon: '🌿', label: 'BrownBoost' },
-  { slug: 'community-bioloop-pilot-schools', color: '#264653', icon: '🏫', label: 'Community' },
+  { slug: 'community-ecobuck-pilot-schools', color: '#264653', icon: '🏫', label: 'Community' },
   { slug: 'zevyer-partnership-clean-tech', color: '#2a9d8f', icon: '🤝', label: 'Partnership' },
   { slug: 'growmix-from-waste-to-soil', color: '#40916c', icon: '🌱', label: 'GrowMix' },
   { slug: 'source-segregation-guide-pakistan', color: '#52b788', icon: '♻️', label: 'Segregation' },

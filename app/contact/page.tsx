@@ -29,24 +29,37 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
 
-    const message = `Hi Eco Zindagi,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nSubject: ${formData.subject}\n\nMessage:\n${formData.message}`
-
-    try {
-      await submitContact({ ...formData })
-    } catch {
-      // still open WhatsApp as fallback
-    }
-
-    window.open(whatsappUrl(message), '_blank')
+  try {
+   await submitContact({
+  ...formData,
+  // formType: 'contact',
+})
+    // Email successfully sent
     setSubmitted(true)
+
+    // Clear form
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      message: '',
+    })
+
+    // Hide success message after 5 seconds
     setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
       setSubmitted(false)
-    }, 3000)
+    }, 5000)
+
+  } catch (error) {
+    console.error('Failed to send contact form:', error)
+
+    alert('Failed to send your message. Please try again.')
   }
+}
 
   return (
     <>
@@ -219,13 +232,13 @@ export default function ContactPage() {
                     type="submit"
                     className="w-full py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all active:scale-95"
                   >
-                    Send via WhatsApp
+                     Send Message
                   </button>
                 </form>
 
-                <p className="text-xs text-muted-foreground mt-4 text-center">
+                {/* <p className="text-xs text-muted-foreground mt-4 text-center">
                   This will open WhatsApp to send your message directly to our team.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>

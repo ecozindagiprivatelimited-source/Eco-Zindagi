@@ -1,17 +1,27 @@
+
 export async function submitContact(data: {
   name: string
   email: string
   phone: string
   subject: string
   message: string
+
 }) {
-  const res = await fetch('/api/contact', {
+  const response = await fetch('/api/contact', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify(data),
   })
-  if (!res.ok) throw new Error('Contact submission failed')
-  return res.json()
+
+  const result = await response.json()
+
+  if (!response.ok) {
+    throw new Error(result.error || 'Failed to send message')
+  }
+
+  return result
 }
 
 export async function submitNewsletter(email: string) {

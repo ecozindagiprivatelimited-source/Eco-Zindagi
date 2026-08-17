@@ -31,20 +31,29 @@ export default function PartnershipsPage() {
   })
   const [status, setStatus] = useState<'idle' | 'saving' | 'done' | 'error'>('idle')
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('saving')
-    try {
-      await submitPartnership(form)
-      const msg = `Hi Eco Zindagi! Partnership inquiry:\n\nName: ${form.name}\nOrg: ${form.organization}\nType: ${form.type}\nLocation: ${form.location}\nEmail: ${form.email}\nPhone: ${form.phone}\n\n${form.message}`
-      window.open(whatsappUrl(msg), '_blank')
-      setStatus('done')
-      setForm({ name: '', email: '', phone: '', organization: '', type: 'society', location: '', message: '' })
-    } catch {
-      setStatus('error')
-    }
-  }
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  setStatus('saving')
 
+  try {
+    await submitPartnership(form)
+
+    setStatus('done')
+
+    setForm({
+      name: '',
+      email: '',
+      phone: '',
+      organization: '',
+      type: 'society',
+      location: '',
+      message: '',
+    })
+  } catch (error) {
+    console.error('Failed to send partnership form:', error)
+    setStatus('error')
+  }
+}
   return (
     <>
       <Navbar />
@@ -68,12 +77,12 @@ export default function PartnershipsPage() {
             <GlassCard glow className="p-6">
               <h2 className="font-heading text-xl font-bold text-foreground">Request a Partnership</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Fill in your details and our team will reach out within 48 hours. You can also WhatsApp us at {WHATSAPP_DISPLAY}.
+                Fill in your details and our team will reach out within 48 hours. 
               </p>
 
               {status === 'done' && (
                 <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-3 text-sm text-primary">
-                  Inquiry saved! We&apos;ve opened WhatsApp so you can connect with our team directly.
+                We have got your request! Our team will reach out within 48 hours.
                 </div>
               )}
               {status === 'error' && (
