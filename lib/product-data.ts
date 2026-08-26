@@ -296,10 +296,10 @@ export const awards = [
 ]
 
 export const impactStats = [
-  { metric: 'Households Onboarded', value: '2,400+', unit: 'across Pakistan', change: '+68%' },
+  { metric: 'Households Onboarded', value: '24+', unit: 'across Pakistan', change: '+68%' },
   { metric: 'Waste Diverted', value: '18T+', unit: 'from landfills', change: '+52%' },
-  { metric: 'Cities & Campuses', value: '12+', unit: 'active pilots', change: '+40%' },
-  { metric: 'EcoBucks Earned', value: '850K+', unit: 'reward points', change: '+120%' },
+  { metric: 'Cities & Campuses', value: '7+', unit: 'active pilots', change: '+40%' },
+  { metric: 'EcoBucks Earned', value: '100K+', unit: 'reward points', change: '+120%' },
 ]
 
 export function getProductBySlug(slug: string): Product | undefined {
